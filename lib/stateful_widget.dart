@@ -18,6 +18,7 @@ class _StateFulWidgetState extends State<StateFulWidget> {
       ),
       body: Column(
         children: [
+          Text(DateTime.now().toString()),
           Container(
             child: Center(
               child: Text(
