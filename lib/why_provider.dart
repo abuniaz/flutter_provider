@@ -14,7 +14,7 @@ class _WhyProviderState extends State<WhyProvider> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer.periodic(Duration(seconds: 1), (timer) {
+    Timer.periodic(const Duration(seconds: 1), (timer) {
       count++;
       print(count);
       setState(() {});
@@ -25,15 +25,25 @@ class _WhyProviderState extends State<WhyProvider> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Provider"),
+        title: const Text("Provider"),
         centerTitle: true,
       ),
       body: Column(
         children: [
           Center(
             child: Text(
+              DateTime.now().hour.toString() +
+                  ":" +
+                  DateTime.now().minute.toString() +
+                  ":" +
+                  DateTime.now().second.toString(),
+              style: const TextStyle(fontSize: 50),
+            ),
+          ),
+          Center(
+            child: Text(
               count.toString(),
-              style: TextStyle(fontSize: 50),
+              style: const TextStyle(fontSize: 50),
             ),
           )
         ],
