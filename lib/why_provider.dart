@@ -16,10 +16,10 @@ class _WhyProviderState extends State<WhyProvider> {
     super.initState();
     Timer.periodic(const Duration(seconds: 1), (timer) {
       count++;
-      print(count);
+      // print(count);
       setState(() {
         for (count = 0; count < 200; count++) {
-          print(count);
+          // print(count);
         }
       });
     });
