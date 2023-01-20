@@ -17,7 +17,11 @@ class _WhyProviderState extends State<WhyProvider> {
     Timer.periodic(const Duration(seconds: 1), (timer) {
       count++;
       print(count);
-      setState(() {});
+      setState(() {
+        for (count = 0; count < 200; count++) {
+          print(count);
+        }
+      });
     });
   }
 
@@ -29,15 +33,19 @@ class _WhyProviderState extends State<WhyProvider> {
         centerTitle: true,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Center(
-            child: Text(
-              DateTime.now().hour.toString() +
-                  ":" +
-                  DateTime.now().minute.toString() +
-                  ":" +
-                  DateTime.now().second.toString(),
-              style: const TextStyle(fontSize: 50),
+          Container(
+            child: Center(
+              child: Text(
+                DateTime.now().hour.toString() +
+                    ":" +
+                    DateTime.now().minute.toString() +
+                    ":" +
+                    DateTime.now().second.toString(),
+                style: const TextStyle(fontSize: 50),
+              ),
             ),
           ),
           Center(
