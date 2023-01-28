@@ -26,7 +26,7 @@ class _StateFulWidgetState extends State<StateFulWidget> {
                 style: const TextStyle(fontSize: 50),
               ),
             ),
-          )
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
