@@ -10,10 +10,9 @@ class ExampleOneScreen extends StatefulWidget {
 }
 
 class _ExampleOneScreenState extends State<ExampleOneScreen> {
-  double value = 1.0;
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<ExampleOneProvider>(context);
+    final provider = Provider.of<ExampleOneProvider>(context, listen: true);
     return Scaffold(
       appBar: AppBar(
         title: const Text("Count Example"),
@@ -27,7 +26,7 @@ class _ExampleOneScreenState extends State<ExampleOneScreen> {
               max: 1,
               value: provider.value,
               onChanged: (val) {
-                value = val;
+                provider.setValue(val);
                 setState(() {});
               }),
           Row(
@@ -35,8 +34,8 @@ class _ExampleOneScreenState extends State<ExampleOneScreen> {
               Expanded(
                 child: Container(
                   height: 100,
-                  decoration:
-                      BoxDecoration(color: Colors.green.withOpacity(value)),
+                  decoration: BoxDecoration(
+                      color: Colors.green.withOpacity(provider.value)),
                   child: const Center(
                     child: Text("Container 1"),
                   ),
@@ -45,8 +44,8 @@ class _ExampleOneScreenState extends State<ExampleOneScreen> {
               Expanded(
                 child: Container(
                   height: 100,
-                  decoration:
-                      BoxDecoration(color: Colors.red.withOpacity(value)),
+                  decoration: BoxDecoration(
+                      color: Colors.red.withOpacity(provider.value)),
                   child: const Center(
                     child: Text("Container 2"),
                   ),
