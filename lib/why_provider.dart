@@ -12,7 +12,6 @@ class _WhyProviderState extends State<WhyProvider> {
   int count = 0;
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     Timer.periodic(const Duration(seconds: 1), (timer) {
       count++;
@@ -37,8 +36,10 @@ class _WhyProviderState extends State<WhyProvider> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
+            color: Colors.white,
             child: Center(
               child: Text(
+                // ignore: prefer_interpolation_to_compose_strings
                 DateTime.now().hour.toString() +
                     ":" +
                     DateTime.now().minute.toString() +

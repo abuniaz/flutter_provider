@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_in_flutter/home_screen.dart';
+
 import 'package:provider_in_flutter/provider/count_provider.dart';
 import 'package:provider_in_flutter/provider/example_one_provider.dart';
-import 'package:provider_in_flutter/screen/count_example.dart';
+
 import 'package:provider_in_flutter/screen/example_one.dart';
-import 'package:provider_in_flutter/stateful_widget.dart';
-import 'package:provider_in_flutter/why_provider.dart';
 
 void main() {
   runApp(const MyApp());

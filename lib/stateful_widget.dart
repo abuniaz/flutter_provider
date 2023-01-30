@@ -20,6 +20,7 @@ class _StateFulWidgetState extends State<StateFulWidget> {
         children: [
           Text(DateTime.now().toString()),
           Container(
+            color: Colors.white,
             child: Center(
               child: Text(
                 count.toString(),

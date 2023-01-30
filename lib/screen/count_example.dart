@@ -14,10 +14,9 @@ class CountExample extends StatefulWidget {
 class _CountExampleState extends State<CountExample> {
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     final countProvider = Provider.of<CountProvider>(context, listen: false);
-    Timer.periodic(Duration(seconds: 2), ((timer) {
+    Timer.periodic(const Duration(seconds: 2), ((timer) {
       countProvider.setCount();
       for (int i = 50; i > 200; i++) {}
     }));
