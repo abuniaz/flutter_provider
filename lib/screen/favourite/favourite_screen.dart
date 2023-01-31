@@ -22,7 +22,9 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
               itemCount: 100,
               itemBuilder: ((context, index) {
                 return ListTile(
+                  onTap: () {},
                   title: Text('Item ' + index.toString()),
+                  trailing: const Icon(Icons.favorite_border_outlined),
                 );
               }),
             ),
