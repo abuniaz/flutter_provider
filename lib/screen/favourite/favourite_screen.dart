@@ -8,6 +8,7 @@ class FavouriteScreen extends StatefulWidget {
 }
 
 class _FavouriteScreenState extends State<FavouriteScreen> {
+  List<int> selectedItem = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +23,14 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
               itemCount: 100,
               itemBuilder: ((context, index) {
                 return ListTile(
-                  onTap: () {},
+                  onTap: () {
+                    selectedItem.add(index);
+                    setState(() {});
+                  },
                   title: Text('Item ' + index.toString()),
-                  trailing: const Icon(Icons.favorite_border_outlined),
+                  trailing: Icon(selectedItem.contains(index)
+                      ? Icons.favorite
+                      : Icons.favorite_border_outlined),
                 );
               }),
             ),
