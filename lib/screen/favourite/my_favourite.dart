@@ -21,9 +21,11 @@ class _MyFavouriteScreenState extends State<MyFavouriteScreen> {
           InkWell(
               onTap: () {
                 Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) => const MyFavouriteScreen())));
+                  context,
+                  MaterialPageRoute(
+                    builder: ((context) => const MyFavouriteScreen()),
+                  ),
+                );
               },
               child: const Icon(Icons.favorite)),
           const SizedBox(
@@ -38,22 +40,23 @@ class _MyFavouriteScreenState extends State<MyFavouriteScreen> {
               itemCount: favouriteProvider.selectedItem.length,
               itemBuilder: ((context, index) {
                 return Consumer<FavouriteItemProvider>(
-                    builder: (context, value, child) {
-                  return ListTile(
-                    onTap: () {
-                      if (value.selectedItem.contains(index)) {
-                        value.removeItem(index);
-                      } else {
-                        value.addItem(index);
-                      }
-                    },
-                    title: Text('Item ' + index.toString()),
-                    trailing: Icon(
-                        favouriteProvider.selectedItem.contains(index)
-                            ? Icons.favorite
-                            : Icons.favorite_border_outlined),
-                  );
-                });
+                  builder: (context, value, child) {
+                    return ListTile(
+                      onTap: () {
+                        if (value.selectedItem.contains(index)) {
+                          value.removeItem(index);
+                        } else {
+                          value.addItem(index);
+                        }
+                      },
+                      title: Text('Item ' + index.toString()),
+                      trailing: Icon(
+                          favouriteProvider.selectedItem.contains(index)
+                              ? Icons.favorite
+                              : Icons.favorite_border_outlined),
+                    );
+                  },
+                );
               }),
             ),
           ),
