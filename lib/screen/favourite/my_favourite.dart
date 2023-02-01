@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_in_flutter/provider/favourite_provider.dart';
-import 'package:provider_in_flutter/screen/favourite/my_favourite.dart';
 
-class FavouriteScreen extends StatefulWidget {
-  const FavouriteScreen({super.key});
+class MyFavouriteScreen extends StatefulWidget {
+  const MyFavouriteScreen({super.key});
 
   @override
-  State<FavouriteScreen> createState() => _FavouriteScreenState();
+  State<MyFavouriteScreen> createState() => _MyFavouriteScreenState();
 }
 
-class _FavouriteScreenState extends State<FavouriteScreen> {
-  List<int> selectedItem = [];
+class _MyFavouriteScreenState extends State<MyFavouriteScreen> {
   @override
   Widget build(BuildContext context) {
+    final favouriteProvider = Provider.of<FavouriteItemProvider>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text("Favourite Screen"),
@@ -36,7 +35,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: 100,
+              itemCount: favouriteProvider.selectedItem.length,
               itemBuilder: ((context, index) {
                 return Consumer<FavouriteItemProvider>(
                     builder: (context, value, child) {
@@ -49,9 +48,10 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
                       }
                     },
                     title: Text('Item ' + index.toString()),
-                    trailing: Icon(value.selectedItem.contains(index)
-                        ? Icons.favorite
-                        : Icons.favorite_border_outlined),
+                    trailing: Icon(
+                        favouriteProvider.selectedItem.contains(index)
+                            ? Icons.favorite
+                            : Icons.favorite_border_outlined),
                   );
                 });
               }),
