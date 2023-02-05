@@ -5,8 +5,6 @@ import 'package:provider_in_flutter/provider/count_provider.dart';
 import 'package:provider_in_flutter/provider/example_one_provider.dart';
 import 'package:provider_in_flutter/provider/favourite_provider.dart';
 import 'package:provider_in_flutter/provider/theme_changer_provider.dart';
-import 'package:provider_in_flutter/screen/example_one.dart';
-import 'package:provider_in_flutter/screen/favourite/favourite_screen.dart';
 
 void main() {
   runApp(const MyApp());
