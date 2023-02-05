@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_in_flutter/dark_theme.dart';
 import 'package:provider_in_flutter/provider/count_provider.dart';
 import 'package:provider_in_flutter/provider/example_one_provider.dart';
 import 'package:provider_in_flutter/provider/favourite_provider.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FavouriteScreen(),
+        home: const DarkThemeScreen(),
       ),
     );
   }
