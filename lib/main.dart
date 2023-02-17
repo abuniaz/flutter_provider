@@ -32,7 +32,9 @@ class MyApp extends StatelessWidget {
               brightness: Brightness.light,
               primarySwatch: Colors.blue,
             ),
-            darkTheme: ThemeData(brightness: Brightness.dark),
+            darkTheme: ThemeData(
+                brightness: Brightness.dark,
+                appBarTheme: AppBarTheme(backgroundColor: Colors.teal)),
             home: const DarkThemeScreen(),
           );
         }));
