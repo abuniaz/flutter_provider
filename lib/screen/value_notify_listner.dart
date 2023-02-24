@@ -1,16 +1,23 @@
 import 'package:flutter/material.dart';
 
 class NotifyListnerScreen extends StatelessWidget {
-  const NotifyListnerScreen({super.key});
+  NotifyListnerScreen({super.key});
+
+  ValueNotifier<int> _center = ValueNotifier<int>(0);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Stateless to Statefull'),
+        title: const Text('Stateless to Statefull'),
         centerTitle: true,
       ),
-      body: Center(),
+      body: const Center(
+        child: Text(
+          'Stateless',
+          style: TextStyle(fontSize: 18),
+        ),
+      ),
     );
   }
 }

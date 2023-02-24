@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
                 brightness: Brightness.dark,
                 appBarTheme: AppBarTheme(backgroundColor: Colors.teal)),
-            home: const NotifyListnerScreen(),
+            home: NotifyListnerScreen(),
           );
         }));
   }
