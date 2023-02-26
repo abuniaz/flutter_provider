@@ -12,11 +12,21 @@ class NotifyListnerScreen extends StatelessWidget {
         title: const Text('Stateless to Statefull'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'Stateless',
-          style: TextStyle(fontSize: 18),
-        ),
+      body: Center(
+          child: ValueListenableBuilder(
+              valueListenable: _center,
+              builder: (context, value, child) {
+                return Text(
+                  _center.value.toString(),
+                  style: TextStyle(fontSize: 18),
+                );
+              })),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _center.value++;
+          print(_center.value.toString());
+        },
+        child: const Icon(Icons.add),
       ),
     );
   }
