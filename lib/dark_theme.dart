@@ -15,22 +15,22 @@ class _DarkThemeScreenState extends State<DarkThemeScreen> {
     final themeChanger = Provider.of<ThemeChanger>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Dark Theme'),
+        title: const Text('Dark Theme'),
         centerTitle: true,
       ),
       body: Column(children: [
         RadioListTile<ThemeMode>(
-            title: Text('Light Mode'),
+            title: const Text('Light Mode'),
             value: ThemeMode.light,
             groupValue: themeChanger.themeMode,
             onChanged: themeChanger.setTheme),
         RadioListTile<ThemeMode>(
-            title: Text('Dark Mode'),
+            title: const Text('Dark Mode'),
             value: ThemeMode.dark,
             groupValue: themeChanger.themeMode,
             onChanged: themeChanger.setTheme),
         RadioListTile<ThemeMode>(
-            title: Text('System Mode'),
+            title: const Text('System Mode'),
             value: ThemeMode.system,
             groupValue: themeChanger.themeMode,
             onChanged: themeChanger.setTheme),

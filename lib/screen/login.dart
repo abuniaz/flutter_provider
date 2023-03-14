@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
             Container(
               height: 50,
               decoration: BoxDecoration(
-                  color: Colors.orange,
+                  color: Colors.deepOrange,
                   borderRadius: BorderRadius.circular(20)),
               child: const Center(
                 child: Text('Login'),
