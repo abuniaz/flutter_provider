@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_in_flutter/dark_theme.dart';
+
 import 'package:provider_in_flutter/provider/auth_provider.dart';
 import 'package:provider_in_flutter/provider/count_provider.dart';
 import 'package:provider_in_flutter/provider/example_one_provider.dart';
 import 'package:provider_in_flutter/provider/favourite_provider.dart';
 import 'package:provider_in_flutter/provider/theme_changer_provider.dart';
 import 'package:provider_in_flutter/screen/login.dart';
-import 'package:provider_in_flutter/screen/value_notify_listner.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,7 +37,7 @@ class MyApp extends StatelessWidget {
             ),
             darkTheme: ThemeData(
                 brightness: Brightness.dark,
-                appBarTheme: AppBarTheme(backgroundColor: Colors.teal)),
+                appBarTheme: const AppBarTheme(backgroundColor: Colors.teal)),
             home: const LoginScreen(),
           );
         }));
