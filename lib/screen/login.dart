@@ -50,11 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(20)),
                 child: Center(
                   child: authProvider.loading
-                      ? CircularProgressIndicator()
-                      : Text('Login'),
+                      ? const CircularProgressIndicator()
+                      : const Text('Login'),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -6,6 +6,7 @@ import 'package:provider_in_flutter/provider/count_provider.dart';
 import 'package:provider_in_flutter/provider/example_one_provider.dart';
 import 'package:provider_in_flutter/provider/favourite_provider.dart';
 import 'package:provider_in_flutter/provider/theme_changer_provider.dart';
+import 'package:provider_in_flutter/screen/favourite/favourite_screen.dart';
 import 'package:provider_in_flutter/screen/login.dart';
 
 void main() {
@@ -38,7 +39,8 @@ class MyApp extends StatelessWidget {
             darkTheme: ThemeData(
                 brightness: Brightness.dark,
                 appBarTheme: const AppBarTheme(backgroundColor: Colors.teal)),
-            home: const LoginScreen(),
+            // home: const LoginScreen(),
+            home: const FavouriteScreen(),
           );
         }));
   }
